@@ -1,0 +1,140 @@
+/*body de toutes les pages*/
+@font-face {
+    font-family: 'Open Sans script=latin rev=2';
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    src: url(../Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-Light.ttf) format('woff2');
+    unicode-range: U+1F00-1FFF;
+  }
+
+.body {
+    background-color: #3989F7;
+    color: white;
+}
+
+/*Début de la navbar : : nav.inc.php*/
+.navbar {
+    padding: unset !important;
+    justify-content: unset !important;
+    list-style-type: none;
+    margin: 0;
+    top: 0;
+    overflow: hidden;
+    background-color: #21559E;
+    position: -webkit-sticky !important;
+    position: sticky !important;;
+    z-index: 3 !important;;
+}
+
+.liNavbar {
+    float: left;
+}
+
+.liNavbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.liNavbar a:hover {
+    background-color: #008577;
+    color: white;
+    text-decoration: none;
+}
+
+.active {
+    background-color: #008577;
+}
+
+.footerTexte {
+    color: white;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
+
+}
+
+.footerTexte {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.card-text, .card-title {
+    color: black !important;
+}
+
+iframe {
+    position: sticky;
+    width: 95%;
+    height: 90%;
+    border: 0;
+}
+
+.map {
+    position: sticky;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2%;
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
+.card-registration .select-arrow {
+    top: 13px;
+}
+
+.imgConteneur{
+    width: 70%;
+    position: relative;
+    left: 15%;
+    margin-bottom: 2%;
+}
+
+.flexible{
+    display : flex;
+    justify-content: center;
+}
+
+.black{
+    color: black;
+}
+
+.sizeCard{
+    width: 30rem;
+}
+
+.marge{
+    margin-right: 5%;
+}
+input:required, textarea:required{
+    background:url('../img/asterisk.png') 98% center no-repeat;
+    background-size: 2%;
+}
+input:focus:invalid, textarea:focus:invalid{
+    border-color:red;
+    background-image: none;
+    box-shadow(#d45252,0,0,5px);
+}
+input:focus:valid, textarea:focus:valid{
+    border-color:limegreen;
+    background-image: none;
+    box-shadow(#d45252,0,0,5px);
+}
+input:valid,textarea:valid{
+    background-image: none;
+}

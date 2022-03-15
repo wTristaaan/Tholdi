@@ -1,0 +1,117 @@
+@media (max-width : 411px) {
+    body ::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card {
+        margin-bottom: 5%;
+    }
+
+    .liNavbar a {
+        padding: 8px !important;
+    }
+
+    .conteneurResponsive {
+        display: none;
+    }
+
+    #map {
+        width: 20rem !important;
+        height: 40rem !important;
+    }
+
+    .taille{
+        width: 100%;
+    }
+
+    .responsiveBouton{
+        flex-wrap: unset!important;
+    }
+
+    .responsiveConteneur{
+        display: none;
+    }
+    .cardResponsive{
+        width:20rem !important;
+    }
+    .marge{
+        margin-right: 1%!important;
+    }
+    .liResponsive{
+        position: absolute!important;
+        right: 20px!important;
+        top: unset!important;
+        left: unset!important;
+    }
+
+    .lip{
+        display: none;
+    }
+
+    .imageResponsive{
+        margin: 5%;
+        width: 25px;
+        height: 25px;
+    }
+
+    .rowIndex{
+        margin-left: -8px!important;
+    }
+
+
+}
+
+@media (max-width: 800px) {
+    .card {
+        margin-bottom: 10%;
+    }
+
+    .rowFluid {
+        flex-flow: wrap;
+        display: flex;
+        justify-content: center
+    }
+
+    .lip{
+        display: none;
+    }
+
+    .imageResponsive{
+        margin: 5%;
+        width: 25px;
+        height: 25px;
+    }
+
+    .rowIndex{
+        margin-left: -8px!important;
+    }
+
+    .rowIndex{
+        margin-left: -8px!important;
+        margin-right: unset!important;
+    }
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /*tablette*/
+    .card-img-top {
+        min-height: 25%;
+        max-height: 0;
+    }
+
+    .card-text {
+        height: 240px !important;
+    }
+
+    .none {
+        display: none !important;
+    }
+
+    #map {
+        width: 45rem !important;
+        height: 40rem !important;
+    }
+
+}
