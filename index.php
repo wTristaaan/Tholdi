@@ -8,7 +8,7 @@ $prep->execute();
 ?>
 
 
-<?php if($_SESSION['user'] != null){ ?>
+<?php if($_SESSION != null){ ?>
 <?php if ($_SESSION['user']['nb'] == 0) {
             echo "<script>alert(\"Nom d'utilisateur ou mot de passe incorrect, réessayez !\")</script>";
             session_unset();

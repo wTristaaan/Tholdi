@@ -22,7 +22,7 @@
                         <div class="col-md-6 col-sm-6">
                             <button type="submit" class="btn btn-primary">Connexion</button>
                         </div>
-                        <?php if($_SESSION['user'] == false || $_SESSION == null){ ?>
+                        <?php if($_SESSION == null){ ?>
                             <a class="col-md-6 col-sm-6" style="display: flex; justify-content: right" href="inscription.php" style="text-decoration: none">
                                 <div>
                                     <button type="button" class="btn btn-primary">Inscription</button>

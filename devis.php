@@ -2,7 +2,7 @@
     require ('fpdf/Devis.php');
     include_once('inc/gestion.base.inc.php');
     include_once('inc/init.php');
-    $codeUtilisateur = $_SESSION['utilisateur']['code'];
+    $codeUtilisateur = $_SESSION['user']['code'];
     $reservation = recupReservationClient($codeUtilisateur);
     $codeReservation = $_POST['codeReservation'];
     $adresse = $_SESSION['user']['adresse'];

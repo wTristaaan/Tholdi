@@ -4,7 +4,7 @@ function gestionnaireDeConnexion(){
     try {
         $pdo = new PDO(
             //Champs a modifier en fonction de votre BDD.
-            //'mysql:host=127.0.0.1:3306; dbname=tholdi', 'root', 'root', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
+            'mysql:host=127.0.0.1:3306; dbname=tholdi', 'root', '', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
         );
     } catch (PDOException $err) {
         $messageErreur = $err->getMessage();

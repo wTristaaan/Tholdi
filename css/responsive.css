@@ -115,3 +115,15 @@
     }
 
 }
+
+@media (max-width: 1920px) {
+    .lip{
+        position: relative;
+        left: -100%;
+        top: 10%;
+    }
+    .imageResponsive{
+        position: relative;
+        left: -100%;
+    }
+}

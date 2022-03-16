@@ -1,8 +1,9 @@
 <?php include_once 'inc/base.inc.php'; ?>
 <?php include_once 'inc/nav.inc.php'; ?>
 
-<?php $codeUtilisateur = $_SESSION['utilisateur']['code'];
-$reservation = recupReservationClient($codeUtilisateur); ?>
+<?php
+$reservation = recupReservationClient(); 
+?>
 
 <?php
 $jours = 0;

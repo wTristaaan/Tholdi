@@ -4,6 +4,7 @@
 <!--inclusion du header et de la navbar -->
 
 <?php
+ini_set('display_errors',0);
 $code = array();
 $codeDesConteneurs = array();
 $nomDesConteneurs = array();

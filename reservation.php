@@ -3,12 +3,13 @@
 <?php include_once 'inc/nav.inc.php' ?>
 <!--inclusion du header et de la navbar -->
 <?php
-dateReservation($_POST['dateDebut'], $_POST['dateFin']);
-if ($_SESSION['reservation'] == 1) {
-    ?>
-    <script>alert("La date de fin ne peut pas être inférieure à la date de début")</script>
-    <?php
-    $_SESSION['reservation'] = 2;
+if($_POST != null){
+    dateReservation($_POST['dateDebut'], $_POST['dateFin']);
+    if ($_SESSION['reservation'] == 1) {?>
+        <script>alert("La date de fin ne peut pas être inférieure à la date de début")</script>
+        <?php
+            $_SESSION['reservation'] = 2;
+    }
 }
 ?>
 <?php if ($_SESSION['reservation'] == 8) {
