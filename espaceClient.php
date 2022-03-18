@@ -22,7 +22,7 @@
                                         </label>
 
                                         <label>
-                                            <input name="mdpClient" type="password" placeholder="Ancien mot de passe">
+                                            <input name="mdpClient" type="password" placeholder="Nouveau mot de passe">
                                         </label>
                                         <button type="submit" class="btn btn-primary">Modifier</button>
                                     </div>
