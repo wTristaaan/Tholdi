@@ -2,16 +2,7 @@
 <?php include_once 'inc/base.inc.php'; ?>
 <?php include_once 'inc/nav.inc.php' ?>
 <!--inclusion du header et de la navbar -->
-<?php
-if($_POST != null){
-    dateReservation($_POST['dateDebut'], $_POST['dateFin']);
-    if ($_SESSION['reservation'] == 1) {?>
-        <script>alert("La date de fin ne peut pas être inférieure à la date de début")</script>
-        <?php
-            $_SESSION['reservation'] = 2;
-    }
-}
-?>
+
 <?php if ($_SESSION['reservation'] == 8) {
     echo "<script>alert(\"vous n'avez pas de reservation !\")</script>";
     $_SESSION['reservation'] = 9;
@@ -22,7 +13,16 @@ if($_POST != null){
     $_SESSION['reservation'] = 9;
 }
 ?>
-
+<?php if ($_SESSION['reservation'] == 999) {
+    echo "<script>alert(\"La date du début de réservation doit être supérieur à la date du jour !\")</script>";
+    $_SESSION['reservation'] = 9;
+}
+?>
+<?php if ($_SESSION['reservation'] == 1) {
+    echo "<script>alert(\"La date de fin ne peut pas être inférieure à la date de début !\")</script>";
+    $_SESSION['reservation'] = 9;
+}
+?>
 <div class="container" style="margin-top: 5%">
     <div class="row">
         <div class="col-md-12" style="display: flex; justify-content: center">

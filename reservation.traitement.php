@@ -23,11 +23,24 @@ if (isset($_POST)){
     $strDateDebut = strtotime($dateDebut);
     $strDateFin = strtotime($dateFin);
 
-    $today = date("F j, Y, g:i a");
-    $strDateReservation = strtotime($today);
+    $today = date("m.d.y");
+    $strToday = strtotime($today);
 
     $codeUtilisateur = $_SESSION['user']['code'];
 
+    $dateDuJour = false;
+    $dateSuperieure = false;
+
+    if($strDateDebut > $strToday){
+        $dateDuJour = true;
+    }else{
+        $_SESSION['reservation'] = 999;
+        header("Location: ./reservation.php");
+        $test = sizeof($_SESSION['panier']);
+        for($y = 0; $y < $test + 1 ; $y++){
+            unset($_SESSION['panier'][$y]);
+        }
+    }
 
     if($strDateDebut > $strDateFin){
         $_SESSION['reservation'] = 1;
@@ -37,20 +50,12 @@ if (isset($_POST)){
             unset($_SESSION['panier'][$y]);
         }
 
+    }else{
+        $dateSuperieure = true;
     }
-    else{
-        if ($villeDepart == $villeArriver){
-            $_SESSION['reservation'] = 4;
-            header("Location: ./reservation.php");
-            $test = sizeof($_SESSION['panier']);
-            for($y = 0; $y < $test + 1 ; $y++){
-                unset($_SESSION['panier'][$y]);
-            }
-        }
-        else{
-            creerReservation($strDateDebut, $strDateFin, $strDateReservation, $volume, $villeDepart, $villeArriver, $codeUtilisateur);
-            header("Location: reserverConteneur.php");
-        }
 
+    if($dateDuJour == true && $dateSuperieure == true){
+        creerReservation($strDateDebut, $strDateFin, $strDateReservation, $volume, $villeDepart, $villeArriver, $codeUtilisateur);
+        header("Location: reserverConteneur.php");
     }
 }
