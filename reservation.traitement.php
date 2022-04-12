@@ -55,7 +55,7 @@ if (isset($_POST)){
     }
 
     if($dateDuJour == true && $dateSuperieure == true){
-        creerReservation($strDateDebut, $strDateFin, $strDateReservation, $volume, $villeDepart, $villeArriver, $codeUtilisateur);
+        creerReservation($strDateDebut, $strDateFin, $strToday, $volume, $villeDepart, $villeArriver, $codeUtilisateur);
         header("Location: reserverConteneur.php");
     }
 }

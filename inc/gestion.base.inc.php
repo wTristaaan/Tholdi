@@ -4,7 +4,7 @@ function gestionnaireDeConnexion(){
     try {
         $pdo = new PDO(
             //Champs a modifier en fonction de votre BDD.
-            'mysql:host=127.0.0.1:3306; dbname=tholdi', 'root', 'root', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
+            'mysql:host=127.0.0.1:3306; dbname=tholdi', 'UtilisateurTholdi', '123456', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
         );
     } catch (PDOException $err) {
         $messageErreur = $err->getMessage();
@@ -76,7 +76,7 @@ function creerReservation($strDateDebut, $strDateFin, $strDateReservation, $volu
         $codeDevis = $prep->fetch();
         $codeDevis = $codeDevis['COUNT(codeDevis)'] + 1;
 
-        $sql="INSERT INTO devis (codeDevis, dateDevis, montantDevis, volume, nbcontainers, valider)VALUES ($codeDevis, $strDateReservation, 1, $volume, 1, 0)";
+        $sql="INSERT INTO devis (codeDevis, dateDevis, montantDevis, volume, nbcontainers, valider)VALUES ($codeDevis, $strDateReservation, 1, $volume, 1, 0);";
         $pdo ->exec($sql);
 
         $volume = $pdo->quote($volume);
@@ -86,8 +86,9 @@ function creerReservation($strDateDebut, $strDateFin, $strDateReservation, $volu
         $numeroReservation = rand(100, 100000);
 
 
+
         $req = "insert into reservation (dateDebutReservation,dateFinReservation, volumeEstime, codeDevis, CodeVilleMiseDisposition,CodeVilleRendre, codeUtilisateur, numeroDeReservation, etat)"
-            ."value($strDateDebut, $strDateFin, $volume, $codeDevis, $villeDepart, $villeArriver, $codeUtilisateur, $numeroReservation, 'enCours')";
+            ."value($strDateDebut, $strDateFin, $volume, $codeDevis, $villeDepart, $villeArriver, $codeUtilisateur, $numeroReservation, 'enCours');";
         $pdo ->exec($req);
     }
 }

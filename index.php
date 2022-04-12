@@ -1,13 +1,6 @@
 <?php include_once 'inc/base.inc.php'?>
 <?php include_once 'inc/nav.inc.php'?>
 
-<?php $pdo = gestionnaireDeConnexion();
-$sql = "SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
-$prep = $pdo->prepare($sql);
-$prep->execute();
-?>
-
-
 <?php if($_SESSION != null){ ?>
 <?php if ($_SESSION['user']['nb'] == 0) {
             echo "<script>alert(\"Nom d'utilisateur ou mot de passe incorrect, réessayez !\")</script>";
